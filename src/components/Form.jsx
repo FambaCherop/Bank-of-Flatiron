@@ -12,6 +12,7 @@ const Form = ({ addTransaction }) => {
 
     const newTransaction = {
       date: new Date().toLocaleDateString(),
+      category, // Include the category value in the newTransaction object
       description,
       amount,
     };

@@ -1,5 +1,4 @@
-
-
+// Table.js
 import React from 'react';
 import './Table.css';
 
@@ -14,6 +13,7 @@ const Table = ({ transactions, searchTerm }) => {
         <thead>
           <tr>
             <th>Date</th>
+            <th>Category</th>
             <th>Description</th>
             <th>Amount</th>
           </tr>
@@ -22,6 +22,7 @@ const Table = ({ transactions, searchTerm }) => {
           {filteredTransactions.map((transaction, index) => (
             <tr key={index}>
               <td>{transaction.date}</td>
+              <td>{transaction.category}</td> {/* Display the category value */}
               <td>{transaction.description}</td>
               <td>{transaction.amount}</td>
             </tr>
