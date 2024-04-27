@@ -4,6 +4,7 @@ import './Table.css';
 
 const Table = ({ transactions, searchTerm }) => {
   const filteredTransactions = transactions.filter((transaction) =>
+    transaction.category.toLowerCase().includes(searchTerm.toLowerCase()) ||
     transaction.description.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
@@ -22,7 +23,7 @@ const Table = ({ transactions, searchTerm }) => {
           {filteredTransactions.map((transaction, index) => (
             <tr key={index}>
               <td>{transaction.date}</td>
-              <td>{transaction.category}</td> {/* Display the category value */}
+              <td>{transaction.category}</td>
               <td>{transaction.description}</td>
               <td>{transaction.amount}</td>
             </tr>
@@ -34,3 +35,4 @@ const Table = ({ transactions, searchTerm }) => {
 };
 
 export default Table;
+

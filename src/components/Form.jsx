@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import './Form.css';
 
 const Form = ({ addTransaction }) => {
+  const [date, setDate] = useState('');
   const [category, setCategory] = useState('');
   const [description, setDescription] = useState('');
   const [amount, setAmount] = useState('');
@@ -10,15 +11,19 @@ const Form = ({ addTransaction }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    // If date is not provided, set it to the current date
+    const currentDate = date ? date : new Date().toLocaleDateString();
+
     const newTransaction = {
-      date: new Date().toLocaleDateString(),
-      category, // Include the category value in the newTransaction object
+      date: currentDate,
+      category,
       description,
       amount,
     };
 
     addTransaction(newTransaction);
 
+    setDate('');
     setCategory('');
     setDescription('');
     setAmount('');
@@ -27,6 +32,12 @@ const Form = ({ addTransaction }) => {
   return (
     <div className="form-container">
       <form onSubmit={handleSubmit} className="transaction-form">
+      
+        <input
+          type="date"
+          value={date}
+          onChange={(e) => setDate(e.target.value)}
+        />
         <input
           type="text"
           placeholder="Category"
@@ -52,4 +63,3 @@ const Form = ({ addTransaction }) => {
 };
 
 export default Form;
-
