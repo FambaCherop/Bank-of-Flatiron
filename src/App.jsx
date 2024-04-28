@@ -23,7 +23,7 @@ function App() {
   return (
     <div className="container">
       <header>
-        <h1 className='starter'>The Royal Bank Of FlatiRON</h1>
+        <h1 className='starter'>The Royal Bank Of Flatiron</h1>
       </header>
       <div className="content">
         <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
