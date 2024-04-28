@@ -3,11 +3,12 @@ import React from 'react';
 import './Table.css';
 
 const Table = ({ transactions, searchTerm }) => {
+  // Filter transactions based on searchTerm
   const filteredTransactions = transactions.filter((transaction) =>
     transaction.category.toLowerCase().includes(searchTerm.toLowerCase()) ||
     transaction.description.toLowerCase().includes(searchTerm.toLowerCase())
   );
-
+ // Render the Table component
   return (
     <div className="transaction-table">
       <table>

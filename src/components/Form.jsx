@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import './Form.css';
 
 const Form = ({ addTransaction }) => {
+    // State variables using useState hook
   const [date, setDate] = useState('');
   const [category, setCategory] = useState('');
   const [description, setDescription] = useState('');
@@ -14,15 +15,16 @@ const Form = ({ addTransaction }) => {
     // If date is not provided, set it to the current date
     const currentDate = date ? date : new Date().toLocaleDateString();
 
+    // Create a new transaction object
     const newTransaction = {
       date: currentDate,
       category,
       description,
       amount,
     };
-
+// Call the addTransaction function passed as prop and pass the new transaction object
     addTransaction(newTransaction);
-
+    //Reset form field
     setDate('');
     setCategory('');
     setDescription('');

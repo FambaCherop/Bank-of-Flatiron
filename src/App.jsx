@@ -5,17 +5,18 @@ import SearchBar from './components/SearchBar';
 import './App.css';
 
 function App() {
+    // Define state variables using useState hook
   const [transactions, setTransactions] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
-
+   // useEffect hook to fetch data when component mounts
   useEffect(() => {
-  
+  // Fetch transactions data from the server
     fetch('http://localhost:3000/transactions')
       .then(response => response.json())
-      .then(data => setTransactions(data))
+      .then(data => setTransactions(data))// Set transactions state with fetched data
       .catch(error => console.error('Error fetching data:', error));
   }, []); 
-
+// Function to add a new transaction
   const addTransaction = (newTransaction) => {
     setTransactions([...transactions, newTransaction]);
   };
