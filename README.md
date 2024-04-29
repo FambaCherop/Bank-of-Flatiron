@@ -9,7 +9,7 @@ Currently, two official plugins are available:
 
 
 # Flatiron-bank
-## By Jorbat Kamau
+## By Famba Laurah
 
 
 ## Description
@@ -32,7 +32,7 @@ User can search transactions by keyword.
 
 1. Clone the repository:
 ```bash
-git clone git@github.com:JBcollo1/Bank-of-flatiron.git
+git clone git@github.com:laurahfamba/Bank-of-flatiron.git
 ```
 2. Install the dependencies:
 ```bash
